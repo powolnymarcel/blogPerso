@@ -2,13 +2,16 @@ Etapes:
 =====
 express blogperso<br>
 ******************************************************************************************************************<br>
-Ajout de dépendances dans le package.json :<br>
-	  "connect-flash":"*", ------>>>> Pour les messages flash('message ajouté merci...)<br>
-	  "express-messages":"*",------>>>>Pour les notifications flash<br>
-	  "express-session":"*",------>>>>Pour avoir des sessions<br>
-	  "express-validator":"*",------>>>>Pour la validation les forms<br>
-	  "moment":"*",------>>>>Pour le formatage des date<br>
-	  "mongoose":"*"------>>>>ORM pour mongoDB<br>
+Ajout de dépendances dans le package.json :
+<br>
+```javascript
+	  "connect-flash":"*", ------>>>> Pour les messages flash('message ajouté merci...)
+	  "express-messages":"*",------>>>>Pour les notifications flash
+	  "express-session":"*",------>>>>Pour avoir des sessions
+	  "express-validator":"*",------>>>>Pour la validation les forms
+	  "moment":"*",------>>>>Pour le formatage des date
+	  "mongoose":"*"------>>>>ORM pour mongoDB
+```
 ajout de nodemon pour le livereload, on lancera l'app avec "nodemon" au lieu de npm start<br>
 ******************************************************************************************************************<br>
 Ajout des middleware dans app.js
