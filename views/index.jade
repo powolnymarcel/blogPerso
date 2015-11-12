@@ -1,5 +1,18 @@
 extends layout
-
 block content
-  h1= title
-  p Welcome to #{title}
+	#content.sidebar_right
+		.inner
+			include ./includes/envedette.jade
+			include ./includes/derniersarticles.jade
+			.sidebar
+				include ./includes/social.jade
+				aside
+					.block_banner_1
+						a(href='#')
+							img(src='images/banner_1.jpg', alt='')
+				include ./includes/postspopulaires.jade
+				include ./includes/lespluscommentes.jade
+				include ./includes/dernierscommentaires.jade
+			.clearboth
+	// CONTENT END
+	// FOOTER BEGIN

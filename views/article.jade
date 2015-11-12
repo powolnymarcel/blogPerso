@@ -1,0 +1,152 @@
+extends layout
+block content
+	.inner
+		.block_general_title_2
+			h1 Standard Post
+			h2
+				a.tags(href='#') Fashion
+				|   /  
+				span.author
+					| by
+					a(href='#') amanda smith
+				|   /  
+				span.date September 28, 2013
+			.stats
+				.likes 15
+				.comments 7
+		.main_content
+			.block_content
+				.pic
+					img(src='images/pic_blog_post_1_1.jpg', alt='')
+				p
+					| Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
+					a(href='#') ab illo inventore veritatis
+					|  et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.
+				p
+					| Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.
+				h3 Small Heading Style
+				p
+					| Qed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae et quasi architecto beatae vitae dicta sunt explicabo emo enim ipsam voluptatem.
+				p
+					| Red ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+				.block_featured_2.left
+					.content
+						p
+							| Perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae et quasi architecto beatae vitae dicta sunt explicabo emo. Enim ipsam voluptatem.
+				p
+					| Perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae et quasi architecto beatae vitae dicta sunt explicabo emo.
+				p
+					| Enim ipsam voluptatem. Quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur. Neque porro quisquam est, qui dolorem.
+				p
+					| Qed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae et quasi architecto beatae vitae dicta sunt explicabo emo enim ipsam voluptatem.
+				.line_1
+			.block_comments_1
+				h3
+					| Comments
+					span 26
+				.comments
+					.comment
+						.inside
+							.avatar
+								a(href='#')
+									img(src='images/ava_default_1.jpg', alt='')
+							.content
+								.author
+									a(href='#') Rojer Moor
+								.info
+									| Sept 24, 2013
+									a(href='#') REPLY
+								.text
+									p
+										| Natus sit voluptatem accusantium dolore laudantium, totam rem aperiam, eaque ipsa quae.  Ab illo inventore veritatis.
+							.clearboth
+					.comment
+						.inside
+							.avatar
+								a(href='#')
+									img(src='images/ava_default_1.jpg', alt='')
+							.content
+								.author
+									a(href='#') Simon Fowler
+								.info
+									| Sept 24, 2013
+									a(href='#') REPLY
+								.text
+									p
+										| Accusantium dolore laudantium, totam rem aperiam, eaque ipsa quae.  Ab illo inventore veritatis et quasiarc.
+							.clearboth
+						.comment
+							.inside
+								.avatar
+									a(href='#')
+										img(src='images/ava_1.jpg', alt='')
+								.content
+									.author
+										a(href='#') Admin
+									.info
+										| Sept 24, 2013
+										a(href='#') REPLY
+									.text
+										p
+											| Dolore laudantium, totam rem aperiam, eaque ipsa quae.  Ab illo inventore veritatis et quasiarchitecto.
+								.clearboth
+					.comment
+						.inside
+							.avatar
+								a(href='#')
+									img(src='images/ava_default_1.jpg', alt='')
+							.content
+								.author
+									a(href='#') Ronald King
+								.info
+									| Sept 24, 2013
+									a(href='#') REPLY
+								.text
+									p
+										| Qolore laudantium, totam rem aperiam, eaque ipsa quae.  Ab illo inventore veritatis et quasiarchitecto beatae vitae.
+							.clearboth
+					.comment.last_comment
+						.inside
+							.avatar
+								a(href='#')
+									img(src='images/ava_default_1.jpg', alt='')
+							.content
+								.author
+									a(href='#') Sandra Downing
+								.info
+									| Sept 24, 2013
+									a(href='#') REPLY
+								.text
+									p
+										| Ratus sit voluptatem accusantium dolore laudantium, totam rem aperiam, eaque ipsa quae.
+							.clearboth
+			.block_leave_comment_1.type_1
+				h3 Live a comment
+				.form
+					form(action='#')
+						.fields
+							.label
+								| Name
+								span *
+							.field
+								input.w_focus_mark.required(type='text', name='name')
+							.label
+								| E-mail
+								span *
+							.field
+								input.w_focus_mark.required(type='text', name='email')
+							.label Subject
+							.field
+								input.w_focus_mark(type='text', name='subject')
+						.oh
+							.label
+								| Message
+								span *
+							.textarea
+								textarea.w_focus_mark(name='message', cols='1', rows='1')
+							.button
+								a.general_button_type_3.submit(href='#') Submit Your Comment
+		.clearboth
+		br
+		// CONTENT END
+		// FOOTER BEGIN

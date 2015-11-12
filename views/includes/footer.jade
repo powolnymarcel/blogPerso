@@ -1,0 +1,112 @@
+footer
+	#footer
+		section.top
+			.inner
+				.block_footer_widgets
+					.column
+						.block_footer_categories
+							h3 Posts Categories
+							ul
+								li
+									a(href='category_photography.html') PHOTOGRAPHY
+								li
+									a(href='category_design.html') DESIGN
+								li
+									a(href='category_fashion.html') FASHION
+								li
+									a(href='category_reviews.html') REVIEWS
+								li
+									a(href='category_music.html') MUSIC
+								li
+									a(href='category_technology.html') TECHNOLOGY
+								li
+									a(href='category_life.html') LIFE
+								li
+									a(href='category_travel.html') TRAVEL
+					.column
+						.block_footer_tags
+							h3 Tags cloud
+							ul
+								li
+									a(href='#') Peoples
+								li
+									a(href='#') Design
+								li
+									a(href='#') Technology
+								li
+									a(href='#') Travel
+								li
+									a(href='#') Music
+								li
+									a(href='#') Photography
+								li
+									a(href='#') Fashion
+								li
+									a(href='#') Creative
+								li
+									a(href='#') Apple
+								li
+									a(href='#') News
+								li
+									a(href='#') Development
+						.block_footer_twitter
+							h3 Twitter Widget
+							#tweets
+							script(type='text/javascript').
+								jQuery(document).ready(function () {
+									jQuery('#tweets').tweet({
+										username: 'WebLionMedia',
+										modpath: 'plugins/twitter/',
+										count: 1,
+										loading_text: 'Loading twitter feed...',
+										template: '{user} {text}{time}'
+									});
+								});
+					.column
+						.block_footer_pics
+							h3 Instagram
+							ul
+								li
+									a(href='#')
+										img(src='images/pic_footer_1.jpg', alt='')
+										span.hover
+								li
+									a(href='#')
+										img(src='images/pic_footer_2.jpg', alt='')
+										span.hover
+								li
+									a(href='#')
+										img(src='images/pic_footer_3.jpg', alt='')
+										span.hover
+								li
+									a(href='#')
+										img(src='images/pic_footer_4.jpg', alt='')
+										span.hover
+								li
+									a(href='#')
+										img(src='images/pic_footer_5.jpg', alt='')
+										span.hover
+								li
+									a(href='#')
+										img(src='images/pic_footer_6.jpg', alt='')
+										span.hover
+		section.middle
+			.inner
+				.block_bottom_menu
+					nav
+						ul
+							li
+								a(href='index.html') HOMEPAGE
+							li
+								a(href='blog_post.html') POSTS
+							li
+								a(href='category_photography.html') CATEGORIES
+							li
+								a(href='full_width.html') PAGES
+							li
+								a(href='shortcodes.html') FEATURES
+		section.bottom
+			.inner
+				.block_copyrights
+					p © Copyright 2013 by WebLionMedia. All Rights Reserved.
+// FOOTER END

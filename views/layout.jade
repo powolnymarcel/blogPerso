@@ -1,7 +1,16 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+	body.sticky_footer
+			.wrapper
+				// HEADER BEGIN
+				include ./includes/header.jade
+				// HEADER END
+				// CONTENT BEGIN
+				block content
+				include ./includes/footer.jade
+		script('src=javascripts/jquery.js')
+		script('src=javascripts/plugins.js')
+		script('src=javascripts/main.js')
