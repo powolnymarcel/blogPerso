@@ -5,12 +5,18 @@ express blogperso<br>
 Ajout de dépendances dans le package.json :
 <br>
 ```javascript
-	  "connect-flash":"*", ------>>>> Pour les messages flash('message ajouté merci...)
-	  "express-messages":"*",------>>>>Pour les notifications flash
-	  "express-session":"*",------>>>>Pour avoir des sessions
-	  "express-validator":"*",------>>>>Pour la validation les forms
-	  "moment":"*",------>>>>Pour le formatage des date
-	  "mongoose":"*"------>>>>ORM pour mongoDB
+	  //Pour les messages flash('message ajouté merci...)
+	  "connect-flash":"*",
+	  //Pour les notifications flash
+	  "express-messages":"*",
+	  //Pour avoir des sessions
+	  "express-session":"*",
+	  //Pour la validation les forms
+	  "express-validator":"*",
+	  //Pour le formatage des date
+	  "moment":"*",
+	  //ORM pour mongoDB
+	  "mongoose":"*"
 ```
 ajout de nodemon pour le livereload, on lancera l'app avec "nodemon" au lieu de npm start<br>
 ******************************************************************************************************************<br>
