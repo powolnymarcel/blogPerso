@@ -86,7 +86,7 @@ var db= mongoose.connection;
 ```
 à partir de là on peur créer ses collections de documents
 ******************************************************************************************************************<br>
-Chercher un template de blog et l'integrer sur jade<br>
+Chercher un template de blog et l'integrer sur jade ( très long et très rébarbatif...)<br>
 ******************************************************************************************************************<br>
 Créer 3 fichiers de routing : articles, categories, gestionnaireCrud<br>
 ******************************************************************************************************************<br>

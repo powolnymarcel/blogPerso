@@ -5,12 +5,13 @@ header
 				.block_top_menu
 					nav
 						ul
-							li.current_page_item
-								a(href='/') Accueil
-							li
-								a(href='/articles') Articles
-							li
-								a(href='/categories.html') Categories
+
+							li(class=title == 'accueil' ? 'current_page_item' : undefined)
+								a(href="/") Accueil
+							li(class=title == 'articles' ? 'current_page_item' : undefined)
+								a(href="/articles") Articles
+							li(class=title == 'categories' ? 'current_page_item' : undefined)
+								a(href='/categories') Categories
 				.block_search
 					input.w_focus_mark(type='text')
 				.block_top_social
@@ -23,5 +24,5 @@ header
 		section.middle
 			.inner
 				#logo_top
-					a(href='index.html')
-						img(src='images/logo_top1.png', alt='Enterprise', title='Enterprise')
+					a(href='/')
+						img(src='/images/logo_top.png', alt='Enterprise', title='Enterprise')

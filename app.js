@@ -12,7 +12,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var articles = require('./routes/articles');
 var categories = require('./routes/categories');
-var gestionnaireCrud = require('./routes/gestionnaireCrud');
+var gestionnaire = require('./routes/gestionnaire');
 
 var app = express();
 
@@ -72,7 +72,7 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/articles', articles);
 app.use('/categories', categories);
-app.use('/gestionnaireCrud', gestionnaireCrud);
+app.use('/gestionnaire', gestionnaire);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

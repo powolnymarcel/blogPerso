@@ -1,0 +1,21 @@
+extends layout
+block content
+	.inner
+		div.coco
+			section
+				h1 Gerer les articles
+				a.general_colored_button.green.espace(href='articles/ajouter') Ajouter un article
+				a.general_colored_button.blue(href='categories') Gerer les categories
+			table.rwd-table
+				tr
+					th Titre article
+					th Catergorie
+					th Date de publication
+					th Auteur
+				tr
+					td Titre
+					td Categorie
+					td Heure
+					td Auteur
+					td
+						a.general_colored_button.red(href='/gestionnaire/articles/edit/1') Editer

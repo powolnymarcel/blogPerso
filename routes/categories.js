@@ -4,7 +4,7 @@ var router = express.Router();
 // par défaut le get sera avec /a-propos
 router.get('/', function(req, res, next) {
 	//On passe le title correct pour le highlight du lien
-	res.render('a_propos', { title: 'a_propos' });
+	res.render('categories', { title: 'categories' });
 });
 
 module.exports = router;

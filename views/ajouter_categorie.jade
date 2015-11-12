@@ -1,0 +1,14 @@
+extends layout
+block content
+	.inner
+		div.coco
+			section
+				form.contact(method='post',action='categories/ajouter')
+					fieldset.contact-inner
+						p.contact-input
+							input(type='text', name='titre', placeholder='titre', autofocus='')
+						p.contact-input
+							input(type='text', name='description', placeholder='description')
+						p.contact-submit
+							input(type='submit', value='Validre')
+						a.general_colored_button.orange(href='/gestionnaire/categories') Retour
