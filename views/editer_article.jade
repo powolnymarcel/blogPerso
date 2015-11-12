@@ -1,0 +1,23 @@
+extends layout
+block content
+	.inner
+		div.coco
+			section
+				form.contact(method='post',action='article/editer/1')
+					fieldset.contact-inner
+						p.contact-input
+							input(type='text', name='titre', placeholder='titre', autofocus='')
+						p.contact-input
+							input(type='text', name='sous_titre', placeholder='sous_titre')
+						p.contact-input
+							label.select(for='select')
+								select#select(name='categorie')
+									option(value='', selected='') Choisir une categorie
+									option(value='1') I have a suggestion
+									option(value='1') I found a bug
+									option(value='1') Other
+						p.contact-input
+							textarea(name='auteur', placeholder='Le nom de l\'auteur')
+						p.contact-submit
+							input(type='submit', value='Validre')
+						a.general_colored_button.orange(href='/gestionnaire/articles') Retour

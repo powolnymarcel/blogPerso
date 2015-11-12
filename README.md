@@ -90,8 +90,11 @@ Chercher un template de blog et l'integrer sur jade ( très long et très rébar
 ******************************************************************************************************************<br>
 Créer 3 fichiers de routing : articles, categories, gestionnaireCrud<br>
 ******************************************************************************************************************<br>
-Déclarer les routes dans app.js   :13 , :70<br>
+Déclarer les fichiers routes dans app.js   :13 , :70<br>
 ******************************************************************************************************************<br>
+modifier les fichiers routes pour qu'ils interagissent avec les jade<br>
+******************************************************************************************************************<br>
+
 
 
 
