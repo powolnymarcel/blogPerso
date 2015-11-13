@@ -3,11 +3,13 @@ block content
 	.inner
 		.block_general_title_1.w_margin_1
 			h1 Toutes les categories
-			p.etiquette
-				a.color1(href='articles/categorie/Titre') Titre
-
-			hr
-			div.block_footer_tags
-				ul
+			ul
+				each categorie, i in categories
 					li
-						a(href='articles/categorie/Titre') Titre
+						a(href='articles/categorie/#{categorie._id}') #{categorie.titre}
+		hr
+		div.block_footer_tags
+			ul
+				each categorie, i in categories
+						li
+						a(href='articles/categorie/#{categorie._id}') #{categorie.titre}

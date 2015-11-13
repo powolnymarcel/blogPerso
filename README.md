@@ -94,9 +94,11 @@ Déclarer les fichiers routes dans app.js   :13 , :70<br>
 ******************************************************************************************************************<br>
 modifier les fichiers routes pour qu'ils interagissent avec les jade<br>
 ******************************************************************************************************************<br>
-
-
-
+On crée le modèle Categorie
+On ajoute 2 ou 3 catégorie "à la mano" via le shell
+Dans le fichier categorie routing, on appelle l'objet categorie
+On injecte dans la route l'objet avec la fn "recupCategories"
+On crée la fn recupCategories dans le modele
 
 
 

@@ -17,7 +17,7 @@ var gestionnaire = require('./routes/gestionnaire');
 var app = express();
 
 //connexion à mongoose
-mongoose.connect('mongodb://localhost/blogperso');
+mongoose.connect('mongodb://localhost/blogPerso');
 var db= mongoose.connection;
 
 // view engine setup
