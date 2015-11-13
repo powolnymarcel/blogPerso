@@ -4,12 +4,14 @@ block content
 		div.coco
 			section
 				h1 Gerer les categories
+				!= messages()
 				a.general_colored_button.green.espace(href='categories/ajouter') Ajouter une categorie
 				a.general_colored_button.blue(href='articles') Gerer les article
 			table.rwd-table
 				tr
 					th Titre categorie
-				tr
-					td Titre
-					td
-						a.general_colored_button.red(href='categories/editer/1') Editer
+				each categorie, i in categories
+					tr
+						td #{categorie.titre}
+						td
+							a.general_colored_button.red(href='categories/editer/1') Editer

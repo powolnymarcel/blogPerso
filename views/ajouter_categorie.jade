@@ -3,7 +3,13 @@ block content
 	.inner
 		div.coco
 			section
-				form.contact(method='post',action='categories/ajouter')
+				ul.erreurs
+						if errors
+								each erreur, i in errors
+									div.general_info_box.error
+										a.close(href='#') fermer
+										p Erreur #{erreur.msg}
+				form.contact(method='post',action='/categories/ajouter')
 					fieldset.contact-inner
 						p.contact-input
 							input(type='text', name='titre', placeholder='titre', autofocus='')

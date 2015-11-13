@@ -1,3 +1,6 @@
+Rappel: <br>
+execution avec "nodemon"
+
 Etapes:
 =====
 express blogperso<br>
@@ -94,14 +97,20 @@ Déclarer les fichiers routes dans app.js   :13 , :70<br>
 ******************************************************************************************************************<br>
 modifier les fichiers routes pour qu'ils interagissent avec les jade<br>
 ******************************************************************************************************************<br>
-On crée le modèle Categorie
-On ajoute 2 ou 3 catégorie "à la mano" via le shell
-Dans le fichier categorie routing, on appelle l'objet categorie
-On injecte dans la route l'objet avec la fn "recupCategories"
-On crée la fn recupCategories dans le modele
-
-
-
+On crée le modèle Categorie<br>
+On ajoute 2 ou 3 catégorie "à la mano" via le shell<br>
+Dans le fichier categorie routing, on appelle l'objet categorie<br>
+On injecte dans la route l'objet avec la fn "recupCategories"<br>
+On crée la fn recupCategories dans le modele<br>
+******************************************************************************************************************<br>
+Création de la route ajouter pour les categories<br>
+On fais de la validation avec express validator<br>
+dans la vue on loop sur "errors" si il y en a et on les affiche si besoin<br>
+SI PAS d'erreurs la route passe dans le "else" et appelle la fonction du modele<br>
+ajouterCategorie<br>
+Si cette fonction a fait correctement son boulot on active un flash<br>
+On place ce flash dans la vue ->  != messages()<br>
+Avant de tester il faut créer la fn dans le modele<br>
 
 
 

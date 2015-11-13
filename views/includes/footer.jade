@@ -5,10 +5,11 @@ footer
 				.block_footer_widgets
 					.column
 						.block_footer_categories
-							h3 Posts Categories
+							h3 Categories
 							ul
-								li
-									a(href='category_photography.html') PHOTOGRAPHY
+								each categorie, i in categories
+									li
+										a(href='articles/categorie/#{categorie._id}') #{categorie.titre}
 					.column
 						.block_footer_tags
 							h3 Tags cloud
@@ -20,11 +21,11 @@ footer
 								li
 					.column
 						.block_footer_pics
-							h3 Instagram
+							h3 Infos
 							ul
 								li
 									a(href='#')
-										img(src='images/pic_footer_1.jpg', alt='')
+										img(src='http://placehold.it/70x70', alt='')
 										span.hover
 		section.middle
 			.inner
@@ -41,5 +42,5 @@ footer
 			.inner
 				.block_copyrights
 					p © Copyright 2015. All Rights Reserved.  | &nbsp;
-						a(href='gestionnaire/articles') Gerer les articles
+						a(href='/gestionnaire/articles') Back-end
 // FOOTER END
