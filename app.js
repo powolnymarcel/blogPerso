@@ -16,16 +16,15 @@ var gestionnaire = require('./routes/gestionnaire');
 
 var app = express();
 
-//*******************************On va chercher les catégories pour les afficher dans le footer en permanence
+
+	//*******************************On va chercher les catégories pour les afficher dans le footer en permanence
 //Trouvé sur http://expressjs.com/api.html#app.locals
-Categorie = require('./modeles/categorie.js');
-Categorie.recupCategories(function(err,categories){
-	var variablePorteeTouteAppli = app.locals.categories =categories;
-	console.log(variablePorteeTouteAppli);
-});
+	Categorie = require('./modeles/categorie.js');
+	Categorie.recupCategories(function(err,categories){
+		var variablePorteeTouteAppli = app.locals.categories =categories;
+		console.log(variablePorteeTouteAppli);
+	});
 //*******************************FIN
-
-
 
 
 

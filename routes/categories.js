@@ -43,7 +43,7 @@ router.post('/ajouter',function(req,res){
 				res.send(err);
 			}else{
 				req.flash('success','Categorie ajoutée avec succes');
-				res.redirect('gerer_categories');
+				res.redirect('/gestionnaire/categories');
 			}
 		});
 	}

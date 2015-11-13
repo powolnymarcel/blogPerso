@@ -7,11 +7,11 @@ block content
 				!= messages()
 				a.general_colored_button.green.espace(href='categories/ajouter') Ajouter une categorie
 				a.general_colored_button.blue(href='articles') Gerer les article
-			table.rwd-table
-				tr
-					th Titre categorie
-				each categorie, i in categories
+				table.rwd-table
 					tr
-						td #{categorie.titre}
-						td
-							a.general_colored_button.red(href='categories/editer/1') Editer
+						th Titre categorie
+					each categorie, i in categories
+						tr
+							td #{categorie.titre}
+							td
+								a.general_colored_button.red(href='/gestionnaire/categories/editer/#{categorie._id}') Editer

@@ -26,7 +26,25 @@ module.exports.recupCategories = function(callback,limit){
 	//Ici on DOIT utiliser les méthodes de mongoose, le limit et le sort sont optionnel
 	Categorie.find(callback).limit(limit).sort([['titre','ascending']]);
 };
-//Récup une categorie
+
+//Ajouter une catégorie
+
+module.exports.ajouterCategorie = function(categorie,callback){
+	//le create est un methode mongoose
+	Categorie.create(categorie,callback)
+};
+
+//Récup une categorie ID
+module.exports.recupCategoriesParId = function(id,callback){
+	//le create est un methode mongoose
+	Categorie.findById(id,callback)
+};
+
+
+
+
+
+
 
 
 

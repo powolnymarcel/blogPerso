@@ -3,12 +3,12 @@ block content
 	.inner
 		div.coco
 			section
-				form.contact(method='post',action='categories/editer/1')
+				form.contact(method='post',action='categories/editer/#{categorie._id}')
 					fieldset.contact-inner
 						p.contact-input
-							input(type='text', name='titre', placeholder='titre', autofocus='')
+							input(type='text', name='titre', placeholder='titre',value='#{categorie.titre}', autofocus='')
 						p.contact-input
-							input(type='text', name='description', placeholder='description')
+							input(type='text', name='description', value='#{categorie.description}',placeholder='description')
 						p.contact-submit
 							input(type='submit', value='Validre')
 						a.general_colored_button.orange(href='/gestionnaire/categories') Retour
