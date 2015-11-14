@@ -28,7 +28,6 @@ module.exports.recupCategories = function(callback,limit){
 };
 
 //Ajouter une catégorie
-
 module.exports.ajouterCategorie = function(categorie,callback){
 	//le create est un methode mongoose
 	Categorie.create(categorie,callback)
@@ -36,15 +35,14 @@ module.exports.ajouterCategorie = function(categorie,callback){
 
 //Récup une categorie ID
 module.exports.recupCategoriesParId = function(id,callback){
-	//le create est un methode mongoose
+	//le findById est un methode mongoose
 	Categorie.findById(id,callback)
 };
 
-
-
-
-
-
+//Mettre à jour une categorie
+module.exports.mettreAjourCategorie = function(requete,mettreAjour,options,callback){
+	Categorie.findOneAndUpdate(requete,mettreAjour,options,callback)
+};
 
 
 

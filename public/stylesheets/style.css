@@ -4526,7 +4526,9 @@ input, textarea, select, label {
 	color: #4d5a5e;
 	outline: 0;
 }
-
+.general_colored_button.red{
+	float: right;
+}
 @media (max-width:768px) {
 	.theme_magenta .block_slider_type_1 .flex-direction-nav a {background-image:url(images/sprite_arrow_7_magenta.png);}
 }

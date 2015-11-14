@@ -111,11 +111,15 @@ ajouterCategorie<br>
 Si cette fonction a fait correctement son boulot on active un flash<br>
 On place ce flash dans la vue ->  != messages()<br>
 Avant de tester il faut créer la fn dans le modele<br>
-
-
-
-
-
+******************************************************************************************************************<br>
+Ensuite update<br>
+Modifier le jade pour avoir les champs remplis avec les bonnes data<br>
+Creer la route  post('/editer/:id')  dans le routing categorie<br>
+Créer dans cette route post 2 variable : requetPourMongoDb  et mettreAjour<br>
+la première pour indiquer l'id de la cat<br>
+la seconde pour indiquer ce qu'il faut meetre à jour<br>
+Sans oublier le plus important créer la fn mettreAjourCategorie dans le modele categories.js<br>
+******************************************************************************************************************<br>
 
 
 

@@ -3,7 +3,7 @@ block content
 	.inner
 		div.coco
 			section
-				form.contact(method='post',action='categories/editer/#{categorie._id}')
+				form.contact(method='post',action='/categories/editer/#{categorie._id}')
 					fieldset.contact-inner
 						p.contact-input
 							input(type='text', name='titre', placeholder='titre',value='#{categorie.titre}', autofocus='')
@@ -12,3 +12,5 @@ block content
 						p.contact-submit
 							input(type='submit', value='Validre')
 						a.general_colored_button.orange(href='/gestionnaire/categories') Retour
+						//														 	Sera un appel AJAX(pas d'angular ici...) + un token de protection contre le xss
+						a.general_colored_button.red.categorie_delete(href='/gestionnaire/categories', data-categorie-id=categorie._id.toString(),data-csrf=locals._csrf) Supprimer
