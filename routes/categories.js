@@ -83,7 +83,7 @@ router.post('/editer/:id',function(req,res){
 });
 
 router.delete('/supprimer/:id',function(requete,reponse){
-	var larequeteMongoDb = {_id : [requete.params._id]};
+	var larequeteMongoDb = {_id : [requete.params.id]};
 	Categorie.remove(larequeteMongoDb,function(erreur){
 		if(erreur){
 			reponse.send(erreur);
