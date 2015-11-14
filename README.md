@@ -97,6 +97,8 @@ Déclarer les fichiers routes dans app.js   :13 , :70<br>
 ******************************************************************************************************************<br>
 modifier les fichiers routes pour qu'ils interagissent avec les jade<br>
 ******************************************************************************************************************<br>
+******************************************************************************************************************<br>
+<h3>Les catégories</h3>
 On crée le modèle Categorie<br>
 On ajoute 2 ou 3 catégorie "à la mano" via le shell<br>
 Dans le fichier categorie routing, on appelle l'objet categorie<br>
@@ -120,12 +122,22 @@ la première pour indiquer l'id de la cat<br>
 la seconde pour indiquer ce qu'il faut meetre à jour<br>
 Sans oublier le plus important créer la fn mettreAjourCategorie dans le modele categories.js<br>
 ******************************************************************************************************************<br>
-
-
-
-
-
-
+Ensuite le delete<br>
+Creer un bouton delete avec 2 attributs <br>
+<ul>
+<li>data-categorie-id=categorie._id.toString()</li>
+<li>data-csrf=locals._csrf) Supprimer</li>
+</ul>
+Le premier servira a récuperer l'id de la categorie<br>
+Le second est la protection contre le xss<br>
+<br>
+Vu qu'à ce stade du site on utilisa pas Angular, on va faire l'action de suppression via AJAX car on a besoin que le type de requete soit un DELETE<br>
+type: 'DELETE',<br>
+On crée donc un fichier js avec un appel en ajax voir "monscript.js", ne pas oublier d'appler ce fichier dans le template !<br>
+Finalement on crée la route /delete/:id<br>
+******************************************************************************************************************<br>
+******************************************************************************************************************<br>
+<h3>Les articles</h3>
 
 
 

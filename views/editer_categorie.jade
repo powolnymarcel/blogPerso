@@ -10,7 +10,7 @@ block content
 						p.contact-input
 							input(type='text', name='description', value='#{categorie.description}',placeholder='description')
 						p.contact-submit
-							input(type='submit', value='Validre')
+							input(type='submit', value='Valider')
 						a.general_colored_button.orange(href='/gestionnaire/categories') Retour
 						//														 	Sera un appel AJAX(pas d'angular ici...) + un token de protection contre le xss
 						a.general_colored_button.red.categorie_delete(data-categorie-id=categorie._id.toString(),data-csrf=locals._csrf) Supprimer
