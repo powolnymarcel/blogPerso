@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 //Schéma categorie
-var articleSchema= mongoose.Schema({
+var ArticleSchema= mongoose.Schema({
 	titre:{
 		type:String
 	},
@@ -18,20 +18,25 @@ var articleSchema= mongoose.Schema({
 	image_url:{
 		type:String
 	},
-	categorie:{
-		type:String
-	},
+	categorie: [
+		{ type: mongoose.Schema.Types.ObjectId, ref: 'Categorie' }],
 	auteur:{
 		type:String
-	}
+	},
+	votePositifs: {type: Number, default: 0},
+	voteNegatifs: {type: Number, default: 0},
+	likes: {type: Number, default: 0},
+	commentaires: [
+		{ type: mongoose.Schema.Types.ObjectId, ref: 'Commentaires' }]
 });
 
 //rendre l'objet disponible
+var Categorie = module.exports = mongoose.model('Article', ArticleSchema);
 
-var Categorie = module.exports = mongoose.model('Categorie', categorieSchema);
+
+
 
 //Le crud se fera dans ce fichier, on instanciera l'objet Categorie dans la route et on appelera les fn ci dessous
-
 //Récup les categories
 // Pour l'utiliser dans d'autres fichiers il faut l'exports
 module.exports.recupCategories = function(callback,limit){
