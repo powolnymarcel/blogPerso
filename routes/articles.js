@@ -5,33 +5,19 @@ Categorie = require('../modeles/categorie.js');
 
 
 router.get('/', function(req, res, next) {
-	Article.recupArticles(function(err,articles){
-		console.log('Article-Article-Article-Article-Article-Article-');
-		if(err){
-			res.send(err);
-		}else{
+	Categorie.recupCategories(function(err,categories){
+		Article.recupArticles(function(err,articles){
 			res.render('articles', {
 				title: 'articles',
 				//Pas nécessaire car dans app.js j'ai cree une variable app.locals.categories pour rendre categories disponible partout
+				categories:categories,
 				articles:articles
 			});
-			console.log(articles);
-		}
+		});
 	});
+});
 
-	//On passe le title correct pour le highlight du lien
-	Categorie.recupCategories(function(err,categories){
-		if(err){
-			res.send(err);
-		}else{
-			res.render('articles', {
-				title: 'articles',
-				//Pas nécessaire car dans app.js j'ai cree une variable app.locals.categories pour rendre categories disponible partout
-				categories:categories
-			});
-			console.log(categories);
-		}
-	});});
+
 router.get('/articleunique/:id', function(req, res, next) {
 	//On passe le title correct pour le highlight du lien
 	res.render('article');

@@ -35,7 +35,7 @@ router.post('/ajouter',function(req,res){
 	}else{
 		//res.send('test passé!')
 		var categorie = new Categorie();
-		categorie._id = req.body.categorie_titre;
+		categorie.categorie_titre = req.body.categorie_titre;
 		categorie.categorie_description = req.body.categorie_description;
 
 		Categorie.ajouterCategorie(categorie,function(err,categorie){

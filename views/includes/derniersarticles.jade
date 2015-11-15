@@ -1,5 +1,5 @@
 .block_general_title_1.w_margin_1
-							h1 Derniers articles
+							h1 Derniers articles (#{articles.length})
 						.main_content
 							.block_posts.type_3
 								each article, i in articles
@@ -16,24 +16,10 @@
 													| ,
 												.date 27, 2013
 												.stats
-													.likes 15
-													.comments 7
+													.likes #{article.article_likes}
+													.comments #{article.article_commentaires_version2.length}
 											.title
 												a(href='blog_post.html') #{article.article_titre}
 											.line_1
 							.separator(style='height:43px;')
-							.block_pager_1
-								ul
-									li.current
-										a(href='#') 1
-									li
-										a(href='#') 2
-									li
-										a(href='#') 3
-									li.skip ...
-									li
-										a(href='#') 7
-									li
-										a.next(href='#') Next
-								.info Page 1 of 7
 								.clearboth

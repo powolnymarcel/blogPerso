@@ -2,7 +2,7 @@ extends layout
 block content
 	.inner
 		.block_general_title_1.w_margin_1
-			h1 Tous les articles
+			h1 Tous les articles (#{articles.length})
 		.main_content
 			.block_posts.type_3
 				each article, i in articles
@@ -19,8 +19,8 @@ block content
 									| ,
 								.date 27, 2013
 								.stats
-									.likes 15
-									.comments 7
+									.likes #{article.article_likes}
+									.comments #{article.article_commentaires_version2.length}
 							.title
 								a(href='blog_post.html') #{article.article_titre}
 							.line_1

@@ -53,8 +53,10 @@ module.exports.recupArticles= function(callback,limit){
 	Article.find(callback).populate('Categorie', 'categorie_titre').limit(limit).sort([['creation','ascending']]);
 
 };
-
-
+module.exports.recupArticlesFrontpage= function(callback,limit){
+	//Ici on DOIT utiliser les méthodes de mongoose, le limit et le sort sont optionnel
+	Article.find(callback).populate('Categorie', 'categorie_titre').limit(8).sort([['creation','ascending']]);
+};
 
 //Ajouter un Articles
 module.exports.ajouterArticle = function(article,callback){
