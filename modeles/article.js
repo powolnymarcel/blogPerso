@@ -50,7 +50,8 @@ var Categorie = module.exports = mongoose.model('Article', ArticleSchema);
 // Pour l'utiliser dans d'autres fichiers il faut l'exports
 module.exports.recupArticles= function(callback,limit){
 	//Ici on DOIT utiliser les méthodes de mongoose, le limit et le sort sont optionnel
-	Article.find(callback).populate('Categorie', 'article_categories').limit(limit).sort([['creation','ascending']]);
+	Article.find(callback).populate('Categorie', 'categorie_titre').limit(limit).sort([['creation','ascending']]);
+
 };
 
 
