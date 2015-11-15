@@ -12,6 +12,6 @@ block content
 						th Titre categorie
 					each categorie, i in categories
 						tr
-							td #{categorie.titre}
+							td #{categorie.categorie_titre}
 							td
 								a.general_colored_button.red(href='/gestionnaire/categories/editer/#{categorie._id}') Editer

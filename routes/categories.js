@@ -22,21 +22,21 @@ router.get('/', function(req, res, next) {
 
 router.post('/ajouter',function(req,res){
 	//On utilise Express validator pour faire de la validation
-	req.checkBody('titre','Le titre est requis!').notEmpty();
-	req.checkBody('description','La description est requise!').notEmpty();
+	req.checkBody('categorie_titre','Le titre est requis!').notEmpty();
+	req.checkBody('categorie_description','La description est requise!').notEmpty();
 
 	var erreurs = req.validationErrors();
 	if(erreurs){
 		res.render('ajouter_categorie',{
 			errors:erreurs,
 			title:"Ajouter une categorie",
-			description:"Ajouter une description"
+			categorie_description:"Ajouter une description"
 		})
 	}else{
 		//res.send('test passé!')
 		var categorie = new Categorie();
-		categorie.titre = req.body.titre;
-		categorie.description = req.body.description;
+		categorie._id = req.body.categorie_titre;
+		categorie.categorie_description = req.body.categorie_description;
 
 		Categorie.ajouterCategorie(categorie,function(err,categorie){
 			if(err){
@@ -54,23 +54,25 @@ router.post('/ajouter',function(req,res){
 
 router.post('/editer/:id',function(req,res){
 	//On utilise Express validator pour faire de la validation
-	req.checkBody('titre','Le titre est requis!').notEmpty();
-	req.checkBody('description','La description est requise!').notEmpty();
+	req.checkBody('categorie_titre','Le titre est requis!').notEmpty();
+	req.checkBody('categorie_description','La description est requise!').notEmpty();
 
 	var erreurs = req.validationErrors();
 	if(erreurs){
+		console.log('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee');
 		res.render('editer_categorie',{
 			errors:erreurs,
 			title:"Ajouter une categorie",
-			description:"Editer la description"
+			categorie_description:"Editer la description"
 		})
 	}else{
+		console.log('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$');
 		//res.send('test passé!')
 		var categorie = new Categorie();
-		var requetPourMongoDb = {_id:[req.params.id]};
-		var mettreAjour = {titre: req.body.titre, description: req.body.description};
+		var requetePourMongoDb = {_id:[req.params.id]};
+		var mettreAjour = {categorie_titre: req.body.categorie_titre, categorie_description: req.body.categorie_description};
 
-		Categorie.mettreAjourCategorie(requetPourMongoDb,mettreAjour,{},function(err,categorie){
+		Categorie.mettreAjourCategorie(requetePourMongoDb,mettreAjour,{},function(err,categorie){
 			if(err){
 				res.send(err);
 			}else{

@@ -2,82 +2,36 @@
 							h1 Derniers articles
 						.main_content
 							.block_posts.type_3
-								article.post_type_4
-									.feature
-										.image
-											a(href='blog_post.html')
-												img(src='images/pic_post_2_1.jpg', alt='')
-												span.hover
-									.content
-										.info
-											.tags
-												a(href='#') TRAVEL
-												| ,
-												a(href='#') LIFE
-											.date 27, 2013
-											.stats
-												.likes 15
-												.comments 7
-										.title
-											a(href='blog_post.html') Quae ab illo inventore veritatis et quasi architecto beatae.
-										.line_1
-								article.post_type_4
-									.feature
-										.image
-											a(href='blog_post.html')
-												img(src='images/pic_post_2_2.jpg', alt='')
-												span.hover
-									.content
-										.info
-											.tags
-												a(href='#') TRAVEL
-												| ,
-												a(href='#') LIFE
-											.date 27, 2013
-											.stats
-												.likes 15
-												.comments 7
-										.title
-											a(href='blog_post.html') Totam rem aperiam, eaque ipsa quae ab illo inventore verit.
-										.line_1
-								article.post_type_4
-									.feature
-										.image
-											a(href='blog_post.html')
-												img(src='images/pic_post_2_3.jpg', alt='')
-												span.hover
-									.content
-										.info
-											.tags
-												a(href='#') TRAVEL
-												| ,
-												a(href='#') LIFE
-											.date 27, 2013
-											.stats
-												.likes 15
-												.comments 7
-										.title
-											a(href='blog_post.html') Rem aperiam, eaque ipsa quae ab illo inven.
-										.line_1
-								article.post_type_4
-									.feature
-										.image
-											a(href='blog_post.html')
-												img(src='images/pic_post_2_4.jpg', alt='')
-												span.hover
-									.content
-										.info
-											.tags
-												a(href='#') TRAVEL
-												| ,
-												a(href='#') LIFE
-											.date 27, 2013
-											.stats
-												.likes 15
-												.comments 7
-										.title
-											a(href='blog_post.html') Red ut perspiciatis unde omnis iste.
-										.line_1
+								each article, i in articles
+									article.post_type_4
+										.feature
+											.image
+												a(href='blog_post.html')
+													img(src='#{article.article_image_url}', alt='image du post')
+													span.hover
+										.content
+											.info
+												hr
+												hr
+												|#{article}
+												hr
+												|ici
+												hr
+												| #{article.categorie_titre}
+												hr
+												each item, i in  article.article_categories
+													| #{item}<br>
+												hr
+												.tags
+													| etiquette
+													| ,
+												.date 27, 2013
+												.stats
+													.likes 15
+													.comments 7
+											.title
+												a(href='blog_post.html') #{article.article_titre}
+											.line_1
 							.separator(style='height:43px;')
 							.block_pager_1
 								ul
