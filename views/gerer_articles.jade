@@ -12,10 +12,11 @@ block content
 					th Catergorie
 					th Date de publication
 					th Auteur
-				tr
-					td Titre
-					td Categorie
-					td Heure
-					td Auteur
+				each article, i in articles
+					tr
+					td #{article.article_titre}
+					td #{article.article_categories}
+					td #{moment(article.article_creation).format('D MMMM YYYY')}
+					td #{article.article_auteur}
 					td
-						a.general_colored_button.red(href='/gestionnaire/articles/editer/1') Editer
+						a.general_colored_button.red(href='/gestionnaire/articles/editer/#{article._id}') Editer

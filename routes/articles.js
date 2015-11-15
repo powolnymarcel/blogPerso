@@ -1,7 +1,16 @@
 var express = require('express');
 var router = express.Router();
 Categorie = require('../modeles/categorie.js');
+Article = require('../modeles/article.js');
 
+router.post('/article/article/like/:id', function(req, res, next) {
+	console.log('rrrrrrrrrrrrrrrrrrrrrrrrrrrr')
+	Article.plus(function(err, article){
+		if (err) { return next(err); }
+
+		res.json(article);
+	});
+});
 
 
 router.get('/', function(req, res, next) {
@@ -38,4 +47,49 @@ router.get('/categorie/:categorie_id', function(req, res, next) {
 	//On passe le title correct pour le highlight du lien
 	res.render('articles');
 });
+
+
+
+
+
+router.post('/ajouter',function(req,res){
+	//On utilise Express validator pour faire de la validation
+	req.checkBody('titre','Le titre est requis!').notEmpty();
+	req.checkBody('sous_titre','La sous_titre est requis!').notEmpty();
+	req.checkBody('categorie','La categorie est requise!').notEmpty();
+	req.checkBody('auteur','La auteur est requis!').notEmpty();
+	req.checkBody('contenu','Le contenu est requis!').notEmpty();
+
+	var erreurs = req.validationErrors();
+	if(erreurs){
+		res.render('ajouter_categorie',{
+			errors:erreurs,
+			title:"Ajouter une categorie",
+			contenu:"Ajouter une description"
+		})
+	}else{
+		//res.send('test passé!')
+		var article = new Article();
+		article.article_titre = req.body.titre;
+		article.article_sous_titre = req.body.sous_titre;
+		article.article_categorie = req.body.categorie;
+		article.article_auteur = req.body.auteur;
+		article.article_contenu = req.body.contenu;
+
+		Article.ajouterArticle(article,function(err,article){
+			if(err){
+				res.send(err);
+			}else{
+				req.flash('success','Article ajoutée avec succes');
+				res.redirect('/gestionnaire/articles');
+			}
+		});
+	}
+
+});
+
+
+
+
+
 module.exports = router;

@@ -30,5 +30,24 @@
 						}
 				})
 			}
-		})
+		});
+
+$('.likes').click(function(evenement) {
+	$this= $(this);
+	console.log($this);
+	console.log($this.parent().attr('data-article-id'));
+
+	$.ajax({
+			type: 'POST',
+		url:'/articles/article/like/' + $this.parent().attr('data-article-id'),
+		success: function(reponse){
+			//$this.parent().parent().remove();
+			window.location.href='/articles'
+		},
+		error:function(erreur){
+			alert(erreur);
+			console.log(erreur);
+		}
+	})
+});
 

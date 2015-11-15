@@ -81,7 +81,10 @@ module.exports.mettreAjourArticle = function(requete,mettreAjour,options,callbac
 
 
 
-
+ArticleSchema.methods.plus = function(cb) {
+	this.article_likes += 1;
+	this.save(cb);
+};
 
 
 

@@ -24,7 +24,17 @@ router.get('/articles', function(req, res, next) {
 	});
 });
 router.get('/articles/ajouter', function(req, res, next) {
-	res.render('ajouter_article', { title: 'ajouter_article' });
+	Categorie.recupCategories(function(err,categories){
+			if(err){
+				res.send(err);
+			}else {
+				res.render('ajouter_article', {
+					title: 'ajouter_article',
+					//Pas nécessaire car dans app.js j'ai cree une variable app.locals.categories pour rendre categories disponible partout
+					categories: categories
+				});
+			}
+		});
 });
 router.get('/categories/ajouter', function(req, res, next) {
 	res.render('ajouter_categorie', { title: 'ajouter_categorie' });

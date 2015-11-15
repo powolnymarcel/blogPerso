@@ -19,7 +19,8 @@ block content
 									| ,
 								.date #{moment(article.article_creation).format('D MMMM YYYY , hh:mm:ss')}
 								.stats
-									.likes #{article.article_likes}
+									a(data-article-id=article._id.toString(),data-csrf=locals._csrf)
+										.likes #{article.article_likes}
 									.comments #{article.article_commentaires_version2.length}
 							.title
 								a(href='/articles/articleunique/#{article._id}') #{article.article_titre}
