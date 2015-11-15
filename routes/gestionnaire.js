@@ -10,12 +10,16 @@ Categorie = require('../modeles/categorie.js');
 router.get('/articles', function(req, res, next) {
 	Categorie.recupCategories(function(err,categories){
 		Article.recupArticles(function(err,articles){
-			res.render('gerer_articles', {
-				title: 'gerer_articles',
-				//Pas nécessaire car dans app.js j'ai cree une variable app.locals.categories pour rendre categories disponible partout
-				categories:categories,
-				articles:articles
-			});
+			if(err){
+				res.send(err);
+			}else {
+				res.render('gerer_articles', {
+					title: 'gerer_articles',
+					//Pas nécessaire car dans app.js j'ai cree une variable app.locals.categories pour rendre categories disponible partout
+					categories: categories,
+					articles: articles
+				});
+			}
 		});
 	});
 });

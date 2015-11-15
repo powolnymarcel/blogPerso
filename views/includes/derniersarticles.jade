@@ -6,7 +6,7 @@
 									article.post_type_4
 										.feature
 											.image
-												a(href='blog_post.html')
+												a(href='/articles/articleunique/#{article._id}')
 													img(src='#{article.article_image_url}', alt='image du post')
 													span.hover
 										.content
@@ -14,12 +14,12 @@
 												.tags
 													| etiquette
 													| ,
-												.date 27, 2013
+												.date #{moment(article.article_creation).format('D MMMM YYYY , hh:mm:ss')}
 												.stats
 													.likes #{article.article_likes}
 													.comments #{article.article_commentaires_version2.length}
 											.title
-												a(href='blog_post.html') #{article.article_titre}
+												a(href='/articles/articleunique/#{article._id}') #{article.article_titre}
 											.line_1
 							.separator(style='height:43px;')
 								.clearboth

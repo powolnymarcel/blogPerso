@@ -138,11 +138,13 @@ Finalement on crée la route /delete/:id<br>
 ******************************************************************************************************************<br>
 ******************************************************************************************************************<br>
 <h3>Les articles</h3>
-Via le mongo shell on ajoute 2-3 articles à la mano :p<br>
-On crée le modele article.js
-Ensuite le template
-
-
+Via le mongo shell on ajoute 2-3 articles à la mano :p<br><br>
+On crée le modele article.js<br>
+Ensuite le template<br>
+On utilise le module "moment" pour formater la date<br>
+On l'appelle dans app.js -- > app.locals.moment = require('moment');<br>
+dans la vue -->#{moment(article.article_titre).format('L')}<br>
+voir : http://momentjs.com/docs/#/displaying/<br>
 
 
 

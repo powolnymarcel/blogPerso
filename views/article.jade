@@ -2,43 +2,28 @@ extends layout
 block content
 	.inner
 		.block_general_title_2
-			h1 Standard Post
+			h1 #{article.article_titre}
 			h2
-				a.tags(href='#') Fashion
+				a.tags(href='#') Etiquette
 				|   /  
 				span.author
 					| by
-					a(href='#') amanda smith
+					a(href='#') #{article.article_auteur}
 				|   /  
-				span.date September 28, 2013
+				span.date #{moment(article.article_creation).format('D MMMM YYYY , hh:mm:ss')}
 			.stats
-				.likes 15
-				.comments 7
+				.likes #{article.article_likes}
+				.comments #{article.article_commentaires_version2.length}
 		.main_content
 			.block_content
 				.pic
-					img(src='images/pic_blog_post_1_1.jpg', alt='')
+					img(src='#{article.article_image_url}', alt='')
 				p
-					| Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
-					a(href='#') ab illo inventore veritatis
-					|  et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.
-				p
-					| Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.
-				h3 Small Heading Style
-				p
-					| Qed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae et quasi architecto beatae vitae dicta sunt explicabo emo enim ipsam voluptatem.
-				p
-					| Red ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+					| #{article.article_contenu}
 				.block_featured_2.left
 					.content
 						p
-							| Perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae et quasi architecto beatae vitae dicta sunt explicabo emo. Enim ipsam voluptatem.
-				p
-					| Perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae et quasi architecto beatae vitae dicta sunt explicabo emo.
-				p
-					| Enim ipsam voluptatem. Quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur. Neque porro quisquam est, qui dolorem.
-				p
-					| Qed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae et quasi architecto beatae vitae dicta sunt explicabo emo enim ipsam voluptatem.
+							| ergtrh etrh erth erh rthrtherth ret hrthrt h ret hrt  #{article.article_sous_titre}.
 				.line_1
 			.block_comments_1
 				h3
