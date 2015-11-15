@@ -72,7 +72,7 @@ router.post('/ajouter',function(req,res){
 		var article = new Article();
 		article.article_titre = req.body.titre;
 		article.article_sous_titre = req.body.sous_titre;
-		article.article_categorie = req.body.categorie;
+		article.article_categories = req.body.categorie;
 		article.article_auteur = req.body.auteur;
 		article.article_contenu = req.body.contenu;
 
