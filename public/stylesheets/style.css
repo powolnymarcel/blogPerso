@@ -1695,7 +1695,9 @@ border: none;
 .general_colored_button.brown {background-color:#6f4e37;}
 .general_colored_button.brown:hover {background-color:#161e26;}
 
-
+.findeminHeight{
+	min-height: 0;
+}
 
 /* pics styles */
 .pic {max-width:100%; position:relative; line-height:0px;text-align: center}

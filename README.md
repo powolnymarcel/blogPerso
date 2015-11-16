@@ -4,6 +4,16 @@ execution avec "nodemon"<br>
 <img src="http://www.ondego.be/divers/blog.png"/>
 <hr>
 
+
+Peut etre amélioré avec:
+ un système de votes avec pouce vers le haut/bas ou like (coeur)<br>
+ Mettre en place : dernier com, les + commentés, post populaire<br>
+ Upload d'images<br>
+ Gestion user pour les commentaires et/ou accès back office<br>
+ Ajouter le tag cloud<br>
+ avoir une collection distincte pour les commentaires<br>
+
+
 Etapes:
 =====
 express blogperso<br>

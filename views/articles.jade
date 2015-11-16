@@ -23,7 +23,7 @@ block content
 										.likes #{article.article_likes}
 									.div.pouces.fa.fa-thumbs-up #{article.article_votePositifs}
 									.div.pouces.fa.fa-thumbs-down #{article.article_voteNegatifs}
-									.comments #{article.article_commentaires_version2.length}
+									.comments #{article.article_commentaires.length}
 							.title
 								a(href='/articles/articleunique/#{article._id}') #{article.article_titre}
 							.line_1
