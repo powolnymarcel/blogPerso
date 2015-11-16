@@ -4,6 +4,7 @@ execution avec "nodemon"<br>
 <img src="http://www.ondego.be/divers/blog.png"/>
 <hr>
 
+<hr>
 
 Peut etre amélioré avec:
  un système de votes avec pouce vers le haut/bas ou like (coeur)<br>
@@ -13,6 +14,16 @@ Peut etre amélioré avec:
  Ajouter le tag cloud<br>
  avoir une collection distincte pour les commentaires<br>
 
+<hr>
+Ajout des fichiers JSON
+<hr>
+# Utiliser les JSON pour populer la BDD<br><br>
+Rappel : export <br>
+mongoexport --db test --collection traffic --out traffic.json<br><br>
+Rappel : import <br>
+You must use mongoimport while connected to a mongod instance. <br>
+mongoimport -d test -c collectionTest test.json <br>
+<hr>
 
 Etapes:
 =====

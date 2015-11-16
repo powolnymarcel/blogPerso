@@ -1,0 +1,5 @@
+{"__v":0,"_id":{"$oid":"56488ac883673f37f71b7730"},"categorie_articles":[{"$oid":"5647b52601b04f076ee6e4e4"}],"categorie_creation":{"$date":"2015-11-15T12:43:32.656Z"},"categorie_description":"descri JS","categorie_titre":"JS"}
+{"__v":0,"_id":{"$oid":"56488ad083673f37f71b7731"},"categorie_articles":[{"$oid":"5647b48b01b04f076ee6e4e3"}],"categorie_creation":{"$date":"2015-11-15T12:43:32.656Z"},"categorie_description":"descri PHP","categorie_titre":"PHP"}
+{"__v":0,"_id":{"$oid":"56488ad983673f37f71b7732"},"categorie_articles":[{"$oid":"5647b48b01b04f076ee6e4e3"},{"$oid":"5647b52601b04f076ee6e4e4"},{"$oid":"56489b5083673f37f71b7733"}],"categorie_creation":{"$date":"2015-11-15T12:43:32.656Z"},"categorie_description":"descri TOUT","categorie_titre":"TOUT"}
+{"__v":0,"_id":{"$oid":"5649e3f40ed3c298098de54d"},"categorie_articles":[],"categorie_creation":{"$date":"2015-11-16T14:11:00.245Z"},"categorie_description":"AngularJs","categorie_titre":"AngularJs"}
+{"__v":0,"_id":{"$oid":"5649e4030ed3c298098de54e"},"categorie_articles":[],"categorie_creation":{"$date":"2015-11-16T14:11:15.977Z"},"categorie_description":"MaterialDesign","categorie_titre":"Material"}
