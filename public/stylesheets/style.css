@@ -53,7 +53,7 @@ aside, article, footer, header, nav, section {display:block;}
 /* defaults end */
 html, body {height:100%;}
 body {-webkit-font-smoothing:antialiased;}
-body, a {font-family:'Montserrat', Helvetica, Arial, sans-serif; font-size:13px; color:#666666;}
+body, a {font-family:'Montserrat', Helvetica, Arial, sans-serif; font-size:13px; color:white;}
 
 .wrapper {min-height:100%; position:relative; background-color:#ffffff;}
 
@@ -197,7 +197,7 @@ blockquote.type_1.right {width:205px; margin:6px 0px 0px 9px; float:right;}
 }
 header {}
 header .top {background-color:#191919;}
-header .middle {padding:53px 0px 47px;}
+header .middle {padding:53px 0px 0px;}
 
 .block_responsive_menu {display:none;}
 
@@ -257,7 +257,7 @@ header .middle {padding:53px 0px 47px;}
 .block_top_social {float:right;}
 .block_top_social li {float:left; display:block;}
 
-#logo_top {width:273px; margin:0px auto;}
+#logo_top {width:612px; margin:0px auto;}
 #logo_top img {width:100%; height:auto; display:block;}
 
 .block_secondary_menu {padding:1px 0px 3px; position:relative; background:url(images/bg_secondary_menu_1.gif) repeat-x; text-align:center;}
@@ -633,7 +633,11 @@ header .middle {padding:53px 0px 47px;}
 .block_posts .post_type_3:hover .stats {opacity:1;}
 .block_posts .post_type_3:hover .title a {color:#33cccd;}
 
-.block_posts .post_type_4 {}
+.block_posts .post_type_4 {
+	min-height: 330px;}
+.image{
+	min-height: 200px;
+}
 .block_posts .post_type_4 .feature {overflow:hidden; position:relative;}
 .block_posts .post_type_4 .image a {display:block; overflow:hidden; position:relative;}
 .block_posts .post_type_4 .image a img {width:100%; height:auto; display:block;}
@@ -1624,7 +1628,7 @@ footer .bottom {}
 .general_button_type_5 {
 	height:25px;
 	line-height:25px;
-	padding:0px 12px;
+	padding:0px 15px;
 	display:inline-block;
 
 	background-color:#a3b2bf;
@@ -1645,15 +1649,15 @@ footer .bottom {}
 .general_colored_button {
 	height:34px;
 	line-height:34px;
-	padding:0px 20px;
+	padding:0px 15px;
 	display:inline-block;
 
 	-webkit-border-radius:2px;
 	-moz-border-radius:2px;
 	border-radius:2px;
-
+border: none;
 	font-family:'Open Sans', Helvetica, Arial, sans-serif;
-	font-size:11px;
+	font-size:10px;
 	color:#ffffff;
 	font-weight:bold;
 	text-align:center;
@@ -4512,7 +4516,6 @@ input, textarea, select, label {
 	position: relative;
 	z-index: 2;
 	width: 112%;
-	height: 29px;
 	line-height: 17px;
 	padding: 5px 9px;
 	padding-right: 0;
@@ -4529,9 +4532,69 @@ input, textarea, select, label {
 .general_colored_button.red{
 	float: right;
 }
+.pouces{
+	margin: 0px 0px 0px 15px;
+	color: #969696;
+	font-size: 15px !important;
+}
 
+/* .slideThree */
+.slideThree {
+	width: 80px;
+	height: 26px;
+	background: #333;
+	margin: 20px auto;
+	position: relative;
+	border-radius: 50px;
+	box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.2);
+}
+.slideThree:after {
+	content: 'OFF';
+	color: #000;
+	position: absolute;
+	right: 10px;
+	z-index: 0;
+	font: 12px/26px Arial, sans-serif;
+	font-weight: bold;
+	text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.15);
+}
+.slideThree:before {
+	content: 'ON';
+	color: #27ae60;
+	position: absolute;
+	left: 10px;
+	z-index: 0;
+	font: 12px/26px Arial, sans-serif;
+	font-weight: bold;
+}
+.slideThree label {
+	display: block;
+	width: 34px;
+	height: 20px;
+	cursor: pointer;
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	z-index: 1;
+	background: #fcfff4;
+	background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+	border-radius: 50px;
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+}
+.slideThree input[type=checkbox] {
+	visibility: hidden;
+}
+.slideThree input[type=checkbox]:checked + label {
+	left: 43px;
+}
+.mleft{
+	margin-left: 10px;
+}
 
-
+/* end .slideThree */
 @media (max-width:768px) {
 	.theme_magenta .block_slider_type_1 .flex-direction-nav a {background-image:url(images/sprite_arrow_7_magenta.png);}
 }

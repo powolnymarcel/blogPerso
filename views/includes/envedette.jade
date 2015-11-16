@@ -18,6 +18,8 @@
 						.date #{moment(article.article_creation).format('D MMMM YYYY , hh:mm:ss')}
 						.stats
 							.likes #{article.article_likes}
+							.div.pouces.fa.fa-thumbs-up #{article.article_votePositifs}
+							.div.pouces.fa.fa-thumbs-down #{article.article_voteNegatifs}
 							.comments #{article.article_commentaires_version2.length}
 					.title
 						a(href='/articles/articleunique/#{article._id}') #{article.article_titre}

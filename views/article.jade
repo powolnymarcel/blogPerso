@@ -13,13 +13,15 @@ block content
 				span.date #{moment(article.article_creation).format('D MMMM YYYY , hh:mm:ss')}
 			.stats
 				.likes #{article.article_likes}
+				.div.pouces.fa.fa-thumbs-up #{article.article_votePositifs}
+				.div.pouces.fa.fa-thumbs-down #{article.article_voteNegatifs}
 				.comments #{article.article_commentaires_version2.length}
 		.main_content
 			.block_content
 				.pic
 					img(src='#{article.article_image_url}', alt='')
 				p
-					| #{article.article_contenu}
+					| !{article.article_contenu}
 				.block_featured_2.left
 					.content
 						p

@@ -62,7 +62,7 @@ router.post('/ajouter',function(req,res){
 
 	var erreurs = req.validationErrors();
 	if(erreurs){
-		res.render('ajouter_categorie',{
+		res.render('ajouter_article',{
 			errors:erreurs,
 			title:"Ajouter une categorie",
 			contenu:"Ajouter une description"
@@ -70,11 +70,20 @@ router.post('/ajouter',function(req,res){
 	}else{
 		//res.send('test passé!')
 		var article = new Article();
+		var envedette = req.body.article_en_vedette;
+		if(typeof envedette === 'undefined'){
+			envedette = false;
+		}
+		else{
+			envedette=true;
+		}
 		article.article_titre = req.body.titre;
 		article.article_sous_titre = req.body.sous_titre;
 		article.article_categories = req.body.categorie;
 		article.article_auteur = req.body.auteur;
 		article.article_contenu = req.body.contenu;
+		article.article_image_url = req.body.image_url;
+		article.article_en_vedette = envedette;
 
 		Article.ajouterArticle(article,function(err,article){
 			if(err){

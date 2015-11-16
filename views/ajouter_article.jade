@@ -3,6 +3,12 @@ block content
 	.inner
 		div.coco
 			section
+				ul.erreurs
+					if errors
+						each erreur, i in errors
+							div.general_info_box.error
+								a.close(href='#') fermer
+								p Erreur #{erreur.msg}
 				form.contact(method='post',action='/articles/ajouter')
 					fieldset.contact-inner
 						p.contact-input
@@ -11,13 +17,19 @@ block content
 							input(type='text', name='sous_titre', placeholder='sous_titre')
 						p.contact-input
 							label.select(for='select')
-								select#select(name='categorie')
+								select#select(name='categorie' multiple class='selectcategorie')
 									each categorie, i in categories
 										option(value='#{categorie._id}') #{categorie.categorie_titre}
 						p.contact-input
-							textarea(name='contenu', placeholder='Le contenu ')
+							textarea(name='contenu', placeholder='Le contenu' id="article_contenu")
 						p.contact-input
 							input(type='text', name='auteur', placeholder='Le nom de l\'auteur')
+						p.contact-input
+							input(type='text', name='image_url', placeholder="L'url de la photo")
+						section(title='.slideThree') Placer l'article en vedette ?
+							.slideThree
+								input#slideThree(type='checkbox', value='None', name='article_en_vedette')
+								label(for='slideThree')
 						p.contact-submit
-							input(type='submit', value='Validre')
-						a.general_colored_button.orange(href='/gestionnaire/articles') Retour
+							input.general_colored_button.green(type='submit', value='Valider')
+							a.general_colored_button.orange.mleft(href='/gestionnaire/articles') Retour

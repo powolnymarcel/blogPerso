@@ -1,5 +1,8 @@
 Rappel: <br>
-execution avec "nodemon"
+execution avec "nodemon"<br>
+<hr>
+<img src="http://www.ondego.be/divers/blog.png"/>
+<hr>
 
 Etapes:
 =====
@@ -147,7 +150,8 @@ dans la vue -->#{moment(article.article_titre).format('L')}<br>
 voir : http://momentjs.com/docs/#/displaying/<br>
 
 
-
+!{article.article_contenu}
+#{article.article_contenu}
 
 
 

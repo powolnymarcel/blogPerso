@@ -14,7 +14,8 @@ block content
 					th Auteur
 				each article, i in articles
 					tr
-					td #{article.article_titre}
+					td
+						a(href='/articles/articleunique/#{article._id}' target="_blank") #{article.article_titre}
 					td #{article.article_categories}
 					td #{moment(article.article_creation).format('D MMMM YYYY')}
 					td #{article.article_auteur}
