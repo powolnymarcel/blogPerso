@@ -39,8 +39,23 @@ router.get('/articles/ajouter', function(req, res, next) {
 router.get('/categories/ajouter', function(req, res, next) {
 	res.render('ajouter_categorie', { title: 'ajouter_categorie' });
 });
+
+
 router.get('/articles/editer/:id', function(req, res, next) {
-	res.render('editer_article', { title: 'editer_article' });
+	Categorie.recupCategories(function(err,categories){
+	Article.recupArticlesParId([req.params.id],function(err,article){
+		if(err){
+			res.send(err);
+		}else {
+			res.render('editer_article', {
+				title: 'editer_article',
+				//Pas nécessaire car dans app.js j'ai cree une variable app.locals.categories pour rendre categories disponible partout
+				article: article,
+				categories: categories
+			})
+		}
+	})
+	})
 });
 router.get('/categories/editer/:id', function(req, res, next) {
 
@@ -52,7 +67,7 @@ router.get('/categories/editer/:id', function(req, res, next) {
 			title: 'editer_categorie',
 			categorie:categorie});
 		}
-	});
+	})
 
 });
 router.get('/categories', function(req, res, next) {

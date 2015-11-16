@@ -12,20 +12,20 @@ block content
 				form.contact(method='post',action='/articles/ajouter')
 					fieldset.contact-inner
 						p.contact-input
-							input(type='text', name='titre', placeholder='titre', autofocus='')
+							input(type='text', name='article_titre', placeholder='titre', autofocus='')
 						p.contact-input
-							input(type='text', name='sous_titre', placeholder='sous_titre')
+							input(type='text', name='article_sous_titre', placeholder='sous_titre')
 						p.contact-input
 							label.select(for='select')
-								select#select(name='categorie' multiple class='selectcategorie')
+								select#select(name='article_categories' multiple class='selectcategorie')
 									each categorie, i in categories
 										option(value='#{categorie._id}') #{categorie.categorie_titre}
 						p.contact-input
-							textarea(name='contenu', placeholder='Le contenu' id="article_contenu")
+							textarea(name='article_contenu', placeholder='Le contenu' id="article_contenu")
 						p.contact-input
-							input(type='text', name='auteur', placeholder='Le nom de l\'auteur')
+							input(type='text', name='article_auteur', placeholder='Le nom de l\'auteur')
 						p.contact-input
-							input(type='text', name='image_url', placeholder="L'url de la photo")
+							input(type='text', name='article_image_url', placeholder="L'url de la photo")
 						section(title='.slideThree') Placer l'article en vedette ?
 							.slideThree
 								input#slideThree(type='checkbox', value='None', name='article_en_vedette')

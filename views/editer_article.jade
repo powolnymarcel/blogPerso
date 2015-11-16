@@ -3,21 +3,48 @@ block content
 	.inner
 		div.coco
 			section
-				form.contact(method='post',action='article/editer/1')
+				ul.erreurs
+					if errors
+						each erreur, i in errors
+							div.general_info_box.error
+								a.close(href='#') fermer
+								p Erreur #{erreur.msg}
+				form.contact(method='post',action='/articles/editer/#{article._id}')
 					fieldset.contact-inner
 						p.contact-input
-							input(type='text', name='titre', placeholder='titre', autofocus='')
+							input(type='text', name='article_titre', placeholder='titre', autofocus='',value="#{article.article_titre}")
 						p.contact-input
-							input(type='text', name='sous_titre', placeholder='sous_titre')
+							input(type='text', name='article_sous_titre', placeholder='sous_titre',value="#{article.article_titre}")
 						p.contact-input
 							label.select(for='select')
-								select#select(name='categorie')
-									option(value='', selected='') Choisir une categorie
-									option(value='1') I have a suggestion
-									option(value='1') I found a bug
-									option(value='1') Other
+								select#select(name='article_categories' multiple class='selectcategorie')
+									each categorie, i in categories
+										- var select=null; if (categorie._id == article.article_categories) select='selected';
+										option(value=categorie._id,selected=select)=categorie.categorie_titre
 						p.contact-input
-							textarea(name='auteur', placeholder='Le nom de l\'auteur')
+							textarea(name='article_contenu', placeholder='Le contenu' id="article_contenu")
+								|#{article.article_contenu}
+						p.contact-input
+							input(type='text', name='article_auteur', placeholder='Le nom de l\'auteur',value="#{article.article_auteur}")
+						p.contact-input
+							input(type='text', name='article_image_url', placeholder="L'url de la photo",value="#{article.article_image_url}")
+						section(title='.slideThree') Placer l'article en vedette ?
+							.slideThree
+								if article.article_en_vedette == true
+									input#slideThree(type='checkbox', value='None', checked, name='article_en_vedette')
+									label(for='slideThree')
+								else
+									input#slideThree(type='checkbox', value='', name='article_en_vedette')
+									label(for='slideThree')
 						p.contact-submit
 							input.general_colored_button.green(type='submit', value='Valider')
 							a.general_colored_button.orange.mleft(href='/gestionnaire/articles') Retour
+							a.general_colored_button.red.article_delete(data-categorie-id=article._id.toString(),data-csrf=locals._csrf) Supprimer
+
+
+
+
+
+
+
+

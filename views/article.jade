@@ -29,110 +29,51 @@ block content
 				.line_1
 			.block_comments_1
 				h3
-					| Comments
-					span 26
+					| Commentaires
+					span  ( #{article.article_commentaires.length} )
 				.comments
-					.comment
-						.inside
-							.avatar
-								a(href='#')
-									img(src='images/ava_default_1.jpg', alt='')
-							.content
-								.author
-									a(href='#') Rojer Moor
-								.info
-									| Sept 24, 2013
-									a(href='#') REPLY
-								.text
-									p
-										| Natus sit voluptatem accusantium dolore laudantium, totam rem aperiam, eaque ipsa quae.  Ab illo inventore veritatis.
-							.clearboth
-					.comment
-						.inside
-							.avatar
-								a(href='#')
-									img(src='images/ava_default_1.jpg', alt='')
-							.content
-								.author
-									a(href='#') Simon Fowler
-								.info
-									| Sept 24, 2013
-									a(href='#') REPLY
-								.text
-									p
-										| Accusantium dolore laudantium, totam rem aperiam, eaque ipsa quae.  Ab illo inventore veritatis et quasiarc.
-							.clearboth
+					each commentaire, i in article.article_commentaires
 						.comment
-							.inside
+								.inside
 								.avatar
-									a(href='#')
-										img(src='images/ava_1.jpg', alt='')
+										a(href='#')
+											img(src='http://placehold.it/80x80', alt='')
 								.content
-									.author
-										a(href='#') Admin
-									.info
-										| Sept 24, 2013
-										a(href='#') REPLY
-									.text
-										p
-											| Dolore laudantium, totam rem aperiam, eaque ipsa quae.  Ab illo inventore veritatis et quasiarchitecto.
+										.author
+											a(href='#') #{commentaire.commentaire_auteur}
+										.info
+											| #{moment(commentaire.commentaire_date).format("LL à hh:mm:ss")}
+											a(href='#') Répondre
+										.text
+											p
+												| #{commentaire.commentaire_contenu}
 								.clearboth
-					.comment
-						.inside
-							.avatar
-								a(href='#')
-									img(src='images/ava_default_1.jpg', alt='')
-							.content
-								.author
-									a(href='#') Ronald King
-								.info
-									| Sept 24, 2013
-									a(href='#') REPLY
-								.text
-									p
-										| Qolore laudantium, totam rem aperiam, eaque ipsa quae.  Ab illo inventore veritatis et quasiarchitecto beatae vitae.
-							.clearboth
-					.comment.last_comment
-						.inside
-							.avatar
-								a(href='#')
-									img(src='images/ava_default_1.jpg', alt='')
-							.content
-								.author
-									a(href='#') Sandra Downing
-								.info
-									| Sept 24, 2013
-									a(href='#') REPLY
-								.text
-									p
-										| Ratus sit voluptatem accusantium dolore laudantium, totam rem aperiam, eaque ipsa quae.
-							.clearboth
 			.block_leave_comment_1.type_1
-				h3 Live a comment
+				h3 Laisser un commentaire
 				.form
-					form(action='#')
+					form(action='/articles/commentaires/ajouter/#{article._id}', method='post', id='commentaires')
 						.fields
 							.label
-								| Name
+								| Nom
 								span *
 							.field
-								input.w_focus_mark.required(type='text', name='name')
+								input.w_focus_mark.required(type='text', name='commentaire_auteur')
 							.label
 								| E-mail
 								span *
 							.field
-								input.w_focus_mark.required(type='text', name='email')
-							.label Subject
+								input.w_focus_mark.required(type='text', name='commentaire_email_auteur')
+							.label Sujet
 							.field
-								input.w_focus_mark(type='text', name='subject')
+								input.w_focus_mark(type='text', name='commentaire_sujet')
 						.oh
 							.label
 								| Message
 								span *
 							.textarea
-								textarea.w_focus_mark(name='message', cols='1', rows='1')
+								textarea.w_focus_mark(name='commentaire_contenu', cols='1', rows='1')
 							.button
-								a.general_button_type_3.submit(href='#') Submit Your Comment
+								input.general_button_type_3.submit(type='submit',name='submit' value='Envoyer votre commentaire')
 		.clearboth
 		br
 		// CONTENT END

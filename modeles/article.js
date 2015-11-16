@@ -32,8 +32,8 @@ var ArticleSchema= mongoose.Schema({
 		{ 	commentaire_sujet: {type:String} ,
 			commentaire_contenu: {type:String},
 			commentaire_auteur: {type:String},
-			commentaire_email: {type:String},
-			commentaire_date: {type:String,default:Date.now}
+			commentaire_email_auteur: {type:String},
+			commentaire_date: {type:Date,default:Date.now}
 		}],
 	article_commentaires_version2: [
 		{ type: mongoose.Schema.Types.ObjectId, ref: 'Commentaire' }]
@@ -48,9 +48,9 @@ var Categorie = module.exports = mongoose.model('Article', ArticleSchema);
 //Le crud se fera dans ce fichier, on instanciera l'objet Categorie dans la route et on appelera les fn ci dessous
 //Récup les articles
 // Pour l'utiliser dans d'autres fichiers il faut l'exports
-module.exports.recupArticles= function(callback,limit){
+module.exports.recupArticles= function(requete,callback,limit){
 	//Ici on DOIT utiliser les méthodes de mongoose, le limit et le sort sont optionnel
-	Article.find(callback).populate('Categorie', 'categorie_titre').limit(limit).sort([['creation','ascending']]);
+	Article.find(requete,callback).populate('Categorie', 'categorie_titre').limit(limit).sort([['creation','ascending']]);
 
 };
 module.exports.recupArticlesFrontpage= function(callback,limit){
@@ -76,6 +76,17 @@ module.exports.mettreAjourArticle = function(requete,mettreAjour,options,callbac
 };
 
 
+//Ajouter un commentaire
+module.exports.ajouterCommentaire = function(requete,commentaire,callback){
+	Article.mettreAjourArticle(requete,
+			//Etant donné que les commentaires sont stockés dans ce document sous forme d'un array il on devrai faire un push
+			{$push:{
+				"article_commentaires":commentaire
+			}
+
+			},
+			callback);
+};
 
 
 

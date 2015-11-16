@@ -1698,8 +1698,8 @@ border: none;
 
 
 /* pics styles */
-.pic {max-width:100%; display:inline-block; position:relative; line-height:0px;}
-.pic img {max-width:100%;}
+.pic {max-width:100%; position:relative; line-height:0px;text-align: center}
+.pic img {max-width:50%; }
 .pic.alignleft {margin:5px 20px 0px 0px; float:left; display:block;}
 .pic.alignright {margin:5px 0px 0px 20px; float:right; display:block;}
 
