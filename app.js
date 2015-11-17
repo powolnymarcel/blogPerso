@@ -16,7 +16,6 @@ var gestionnaire = require('./routes/gestionnaire');
 
 var app = express();
 
-
 //*******************************On va chercher les catégories pour les afficher dans le footer en permanence
 //Trouvé sur http://expressjs.com/api.html#app.locals
 Categorie = require('./modeles/categorie.js');
@@ -31,8 +30,9 @@ Categorie.recupCategories(function(err,categories){
 
 
 //connexion à mongoose
-mongoose.connect('mongodb://localhost/blogPerso');
 var db= mongoose.connection;
+  var uri= "mongodb://blogperso:blogpersopass@ds033153.mongolab.com:33153/blogperso"
+mongoose.connect(uri);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
